@@ -1,5 +1,5 @@
 #
-![Build Status](https://github.com/FadeevDV/yamdb_final/workflows/yambd-workflow/badge.svg)
+![Build Status](https://github.com/FadeevDV/yamdb_final/actions/workflows/yamdb-workflow/badge.svg)
 
 
 # YaMDB_final
@@ -114,110 +114,110 @@ TELEGRAM_TOKEN # Токен бота (для оправки уведомлени
 
 #### AUTH - Аутентификация
 - GET Получение JWT-токена в обмен на email и confirmation code
-  - - /api/v1/auth/token/
+  -  /api/v1/auth/token/
 - POST Отправление confirmation_code на переданный email.
-  - - /api/v1/auth/email/
+  -  /api/v1/auth/email/
     
 #### USERS - Пользователи
 - GET Получить список всех пользователей.
-  - - /api/v1/users/
-  - - Права доступа: Администратор
+  -  /api/v1/users/
+  -  Права доступа: Администратор
 - POST Создание пользователя.
-  - - /api/v1/auth/email/
-  - - Права доступа: Администратор
+  -  /api/v1/auth/email/
+  -  Права доступа: Администратор
 - GET Получить пользователя по username.
-  - - /api/v1/users/{username}/
-  - - Права доступа: Администратор
+  -  /api/v1/users/{username}/
+  -  Права доступа: Администратор
 - PATCH Изменить данные пользователя по username.
-  - - /api/v1/users/{username}/
-  - - Права доступа: Администратор
+  -  /api/v1/users/{username}/
+  -  Права доступа: Администратор
 - DEL Удалить пользователя по username. 
-  - - /api/v1/users/{username}/
-  - - Права доступа: Администратор
+  -  /api/v1/users/{username}/
+  -  Права доступа: Администратор
 - GET Получить данные своей учетной записи.
-  - - /api/v1/users/me/
-  - - Права доступа: Любой авторизованный пользователь
+  -  /api/v1/users/me/
+  -  Права доступа: Любой авторизованный пользователь
 - PATCH Изменить данные своей учетной записи.
-  - - /api/v1/users/me/
-  - - Права доступа: Любой авторизованный пользователь
+  -  /api/v1/users/me/
+  -  Права доступа: Любой авторизованный пользователь
     
 #### REVIEWS - Отзывы
 
 - GET Получить список всех отзывов. 
-  - - /api/v1/titles/{title_id}/reviews/
-  - - Права доступа: Доступно без токена.
+  -  /api/v1/titles/{title_id}/reviews/
+  -  Права доступа: Доступно без токена.
 - POST Создать новый отзыв.
-  - - /api/v1/titles/{title_id}/reviews/
-  - - Права доступа: Аутентифицированные пользователи.
+  -  /api/v1/titles/{title_id}/reviews/
+  -  Права доступа: Аутентифицированные пользователи.
 - GET Получить отзыв по id.
-  - - /api/v1/titles/{title_id}/reviews/{review_id}/
-  - - Права доступа: Доступно без токена.
+  -  /api/v1/titles/{title_id}/reviews/{review_id}/
+  -  Права доступа: Доступно без токена.
 - PATCH Частично обновить отзыв по id.
-  - - /api/v1/titles/{title_id}/reviews/{review_id}/
-  - - Права доступа: Автор отзыва, модератор или администратор.
+  -  /api/v1/titles/{title_id}/reviews/{review_id}/
+  -  Права доступа: Автор отзыва, модератор или администратор.
 - DEL Удалить отзыв по id.
-  - - /api/v1/titles/{title_id}/reviews/{review_id}/
-  - - Права доступа: Автор отзыва, модератор или администратор.
+  -  /api/v1/titles/{title_id}/reviews/{review_id}/
+  -  Права доступа: Автор отзыва, модератор или администратор.
 
 #### COMMENTS - Комментарии к отзывам
 
  - GET Получить список всех комментариев к отзыву по id.
-   - - /api/v1/titles/{title_id}/reviews/{review_id}/comments/
-   - - Права доступа: Доступно без токена.
+   -  /api/v1/titles/{title_id}/reviews/{review_id}/comments/
+   -  Права доступа: Доступно без токена.
  - POST Создать новый комментарий для отзыва.
-   - - /api/v1/titles/{title_id}/reviews/{review_id}/comments/
-   - - Права доступа: Аутентифицированные пользователи.
+   -  /api/v1/titles/{title_id}/reviews/{review_id}/comments/
+   -  Права доступа: Аутентифицированные пользователи.
  - GET Получить комментарий для отзыва по id.
-   - - /api/v1/titles/{title_id}/reviews/{review_id}/comments/{comment_id}/
-   - - Права доступа: Доступно без токена.
+   -  /api/v1/titles/{title_id}/reviews/{review_id}/comments/{comment_id}/
+   -  Права доступа: Доступно без токена.
  - PATCH Частично обновить комментарий к отзыву по id.
-   - - /api/v1/titles/{title_id}/reviews/{review_id}/comments/{comment_id}/
-   - - Права доступа: Автор комментария, модератор или администратор.
+   -  /api/v1/titles/{title_id}/reviews/{review_id}/comments/{comment_id}/
+   -  Права доступа: Автор комментария, модератор или администратор.
  - DEL Удалить комментарий к отзыву по id.
-   - - /api/v1/titles/{title_id}/reviews/{review_id}/comments/{comment_id}/
-   - - Права доступа: Автор комментария, модератор или администратор.
+   -  /api/v1/titles/{title_id}/reviews/{review_id}/comments/{comment_id}/
+   -  Права доступа: Автор комментария, модератор или администратор.
     
 #### CATEGORIES - Категории (типы) произведений
 
   - GET Получить список всех категорий.
-    - - /api/v1/categories/
-    - - Права доступа: Доступно без токена
+    -  /api/v1/categories/
+    -  Права доступа: Доступно без токена
   - POST Создать категорию.
-    - - /api/v1/categories/
-    - - Права доступа: Администратор.
+    -  /api/v1/categories/
+    -  Права доступа: Администратор.
   - DEL Удалить категорию. 
-    - - /api/v1/categories/{slug}/
-    - - Права доступа: Администратор.
+    -  /api/v1/categories/{slug}/
+    -  Права доступа: Администратор.
     
  #### GENRES - Категории жанров
 
   - GET Получить список всех жанров.
-    - - /api/v1/genres/
-    - - Права доступа: Доступно без токена
+    -  /api/v1/genres/
+    -  Права доступа: Доступно без токена
   - POST Создать жанр. 
-    - - /api/v1/genres/
-    - - Права доступа: Администратор.
+    -  /api/v1/genres/
+    -  Права доступа: Администратор.
   - DEL Удалить жанр.
-    - - /api/v1/genres/{slug}/
-    - - Права доступа: Администратор.
+    -  /api/v1/genres/{slug}/
+    -  Права доступа: Администратор.
     
  #### TITLES - Произведения, к которым пишут отзывы (определённый фильм, книга или песенка).
 
   - GET Получить список всех объектов.
-    - - /api/v1/titles/
-    - - Права доступа: Доступно без токена
+    -  /api/v1/titles/
+    -  Права доступа: Доступно без токена
   - POST Создать произведение для отзывов.
-    - - /api/v1/titles/
-    - - Права доступа: Администратор.
+    -  /api/v1/titles/
+    -  Права доступа: Администратор.
   - GET Информация об объекте.
-    - - /api/v1/titles/{titles_id}/
-    - - Права доступа: Доступно без токена.
+    -  /api/v1/titles/{titles_id}/
+    -  Права доступа: Доступно без токена.
   - PATCH Обновить информацию об объекте.
-    - - /api/v1/titles/{titles_id}/
-    - - Права доступа: Администратор
+    -  /api/v1/titles/{titles_id}/
+    -  Права доступа: Администратор
   - DEL Удалить произведение. 
-    - - /api/v1/titles/{titles_id}/
-    - - Права доступа: Администратор.
+    -  /api/v1/titles/{titles_id}/
+    -  Права доступа: Администратор.
     
  #### Информация по запросам
 Запустите сервер.
