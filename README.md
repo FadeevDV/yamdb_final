@@ -1,5 +1,5 @@
 #
-![Build Status](https://github.com/FadeevDV/yamdb_final/actions/workflows/yamdb-workflow/badge.svg)
+![example workflow](https://github.com/FadeevDV/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 
 # YaMDB_final
