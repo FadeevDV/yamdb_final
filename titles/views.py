@@ -7,12 +7,8 @@ from rest_framework.response import Response
 
 from titles.filters import TitleFilter
 from titles.models import Category, Genre, Title
-from titles.serializers import (
-    CategorySerializer,
-    GenreSerializer,
-    TitleSerializer_NOTSAFE,
-    TitleSerializer_SAFE,
-)
+from titles.serializers import (CategorySerializer, GenreSerializer,
+                                TitleSerializer_NOTSAFE, TitleSerializer_SAFE)
 
 from users.permissions import IsAdminOrReadOnly
 
@@ -22,7 +18,7 @@ class CategoryViewSet(
         mixins.CreateModelMixin,
         mixins.DestroyModelMixin,
         viewsets.GenericViewSet):
-    '''Операции с категориями произведений'''
+    """Операции с категориями произведений"""
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     filter_backends = [filters.SearchFilter]
