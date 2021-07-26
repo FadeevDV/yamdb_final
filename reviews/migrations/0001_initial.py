@@ -35,7 +35,7 @@ class Migration(migrations.Migration):
                      django.core.validators.MaxValueValidator(
                          10, 'Рейтинг не может быть выше 10')
                  ],
-                                                  verbose_name='Оценка')),
+                     verbose_name='Оценка')),
                 ('author',
                  models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
                                    related_name='reviews',
