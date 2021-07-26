@@ -1,3 +1,4 @@
+# Create your models here.
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import validate_email
 from django.db import models
@@ -11,7 +12,9 @@ class UserRole(models.TextChoices):
 
 class User(AbstractUser):
     """Расширение стандартной модели пользователя Django"""
-    bio = models.TextField(blank=True, )
+    bio = models.TextField(
+        blank=True,
+    )
     email = models.EmailField(
         blank=False,
         unique=True,
@@ -23,7 +26,9 @@ class User(AbstractUser):
         choices=UserRole.choices,
         default=UserRole.USER,
     )
-    secret = models.CharField(max_length=200, )
+    secret = models.CharField(
+        max_length=200,
+    )
     username = models.CharField(
         max_length=150,
         blank=True,
@@ -43,4 +48,6 @@ class User(AbstractUser):
             return True
 
     class Meta:
-        ordering = ('-username', )
+        ordering = (
+            '-username',
+        )

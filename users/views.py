@@ -23,9 +23,10 @@ class UserViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAdmin, IsAuthenticated)
     lookup_field = 'username'
 
-    @action(detail=False,
-            methods=['PATCH', 'GET'],
-            permission_classes=(IsAuthenticated, ))
+    @action(
+        detail=False, methods=['PATCH', 'GET'],
+        permission_classes=(IsAuthenticated,)
+    )
     def me(self, request):
         serializer = UserSerializer(request.user,
                                     data=request.data,
@@ -36,6 +37,7 @@ class UserViewSet(viewsets.ModelViewSet):
 
 
 class ConfirmationCodeView(APIView):
+
     def post(self, request):
         """Обработка POST запроса на получение Confirmation code"""
         serializer = UserEmailSerializer(data=request.data)
