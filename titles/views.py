@@ -10,17 +10,16 @@ from titles.serializers import (CategorySerializer, GenreSerializer,
 from users.permissions import IsAdminOrReadOnly
 
 
-class CategoryViewSet(
-        mixins.ListModelMixin,
-        mixins.CreateModelMixin,
-        mixins.DestroyModelMixin,
-        viewsets.GenericViewSet):
+class CategoryViewSet(mixins.ListModelMixin, mixins.CreateModelMixin,
+                      mixins.DestroyModelMixin, viewsets.GenericViewSet):
     """Операции с категориями произведений"""
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     filter_backends = [filters.SearchFilter]
     permission_classes = [IsAdminOrReadOnly]
-    search_fields = ['name', ]
+    search_fields = [
+        'name',
+    ]
     lookup_field = 'slug'
 
     def delete(self, request, slug):
@@ -29,17 +28,16 @@ class CategoryViewSet(
         return Response(status.HTTP_200_OK, status=status.HTTP_204_NO_CONTENT)
 
 
-class GenreViewSet(
-        mixins.ListModelMixin,
-        mixins.CreateModelMixin,
-        mixins.DestroyModelMixin,
-        viewsets.GenericViewSet):
+class GenreViewSet(mixins.ListModelMixin, mixins.CreateModelMixin,
+                   mixins.DestroyModelMixin, viewsets.GenericViewSet):
     '''Операции с жанрами произведений'''
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
     filter_backends = [filters.SearchFilter]
     permission_classes = [IsAdminOrReadOnly]
-    search_fields = ['name', ]
+    search_fields = [
+        'name',
+    ]
     lookup_field = 'slug'
 
     def delete(self, request, slug):

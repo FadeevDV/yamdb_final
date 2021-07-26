@@ -15,7 +15,6 @@ class TitleFilter(filters.FilterSet):
     genre = CharFilterInFilter(
         field_name='genre__slug',
         lookup_expr='in',
-
     )
     name = filters.CharFilter(
         field_name='name',

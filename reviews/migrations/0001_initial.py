@@ -19,17 +19,23 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Review',
             fields=[
-                ('id', models.AutoField(auto_created=True,
-                                        primary_key=True, serialize=False, verbose_name='ID')),
+                ('id',
+                 models.AutoField(auto_created=True,
+                                  primary_key=True,
+                                  serialize=False,
+                                  verbose_name='ID')),
                 ('text', models.TextField(verbose_name='Текст отзыва')),
-                ('pub_date', models.DateTimeField(
-                    auto_now_add=True, verbose_name='Дата публикации отзыва')),
-                (
-                    'score', models.PositiveSmallIntegerField(
-                        validators=[
-                            django.core.validators.MinValueValidator(
-                                1, 'Рейтинг не может быть ниже 1'), django.core.validators.MaxValueValidator(
-                                10, 'Рейтинг не может быть выше 10')], verbose_name='Оценка')),
+                ('pub_date',
+                 models.DateTimeField(auto_now_add=True,
+                                      verbose_name='Дата публикации отзыва')),
+                ('score',
+                 models.PositiveSmallIntegerField(validators=[
+                     django.core.validators.MinValueValidator(
+                         1, 'Рейтинг не может быть ниже 1'),
+                     django.core.validators.MaxValueValidator(
+                         10, 'Рейтинг не может быть выше 10')
+                 ],
+                                                  verbose_name='Оценка')),
                 ('author',
                  models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
                                    related_name='reviews',
@@ -42,17 +48,21 @@ class Migration(migrations.Migration):
                                    verbose_name='Произведение')),
             ],
             options={
-                'ordering': ('-pub_date',),
+                'ordering': ('-pub_date', ),
             },
         ),
         migrations.CreateModel(
             name='Comment',
             fields=[
-                ('id', models.AutoField(auto_created=True,
-                                        primary_key=True, serialize=False, verbose_name='ID')),
+                ('id',
+                 models.AutoField(auto_created=True,
+                                  primary_key=True,
+                                  serialize=False,
+                                  verbose_name='ID')),
                 ('text', models.TextField(verbose_name='Текст комментария')),
-                ('pub_date', models.DateTimeField(
-                    auto_now_add=True, verbose_name='Дата комментария')),
+                ('pub_date',
+                 models.DateTimeField(auto_now_add=True,
+                                      verbose_name='Дата комментария')),
                 ('author',
                  models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
                                    related_name='comments',
@@ -65,7 +75,7 @@ class Migration(migrations.Migration):
                                    verbose_name='Комментарий')),
             ],
             options={
-                'ordering': ('-pub_date',),
+                'ordering': ('-pub_date', ),
             },
         ),
     ]

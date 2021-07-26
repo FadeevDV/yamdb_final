@@ -15,9 +15,13 @@ class Migration(migrations.Migration):
             model_name='title',
             name='rating',
             field=models.PositiveSmallIntegerField(
-                null=True, validators=[
+                null=True,
+                validators=[
                     django.core.validators.MinValueValidator(
-                        1, 'Рейтинг не может быть ниже 1'), django.core.validators.MaxValueValidator(
-                        10, 'Рейтинг не может быть выше 10')], verbose_name='Рейтинг'),
+                        1, 'Рейтинг не может быть ниже 1'),
+                    django.core.validators.MaxValueValidator(
+                        10, 'Рейтинг не может быть выше 10')
+                ],
+                verbose_name='Рейтинг'),
         ),
     ]

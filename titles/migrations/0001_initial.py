@@ -8,58 +8,77 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
             name='Category',
             fields=[
-                ('id', models.AutoField(auto_created=True,
-                                        primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=200,
-                                          unique=True, verbose_name='Категория произведения')),
-                ('slug', models.SlugField(unique=True,
-                                          verbose_name='slug категории произведения')),
+                ('id',
+                 models.AutoField(auto_created=True,
+                                  primary_key=True,
+                                  serialize=False,
+                                  verbose_name='ID')),
+                ('name',
+                 models.CharField(max_length=200,
+                                  unique=True,
+                                  verbose_name='Категория произведения')),
+                ('slug',
+                 models.SlugField(unique=True,
+                                  verbose_name='slug категории произведения')),
             ],
             options={
-                'ordering': ('name',),
+                'ordering': ('name', ),
             },
         ),
         migrations.CreateModel(
             name='Genre',
             fields=[
-                ('id', models.AutoField(auto_created=True,
-                                        primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=200,
-                                          unique=True, verbose_name='Жанр произведения')),
-                ('slug', models.SlugField(unique=True,
-                                          verbose_name='slug жанра произведения')),
+                ('id',
+                 models.AutoField(auto_created=True,
+                                  primary_key=True,
+                                  serialize=False,
+                                  verbose_name='ID')),
+                ('name',
+                 models.CharField(max_length=200,
+                                  unique=True,
+                                  verbose_name='Жанр произведения')),
+                ('slug',
+                 models.SlugField(unique=True,
+                                  verbose_name='slug жанра произведения')),
             ],
             options={
-                'ordering': ('name',),
+                'ordering': ('name', ),
             },
         ),
         migrations.CreateModel(
             name='Title',
             fields=[
-                ('id', models.AutoField(auto_created=True,
-                                        primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=200,
-                                          verbose_name='Название произведения')),
-                ('year', models.PositiveIntegerField(
-                    verbose_name='Год создания произведения')),
-                ('description', models.TextField(blank=True,
-                                                 null=True, verbose_name='Описание произведения')),
+                ('id',
+                 models.AutoField(auto_created=True,
+                                  primary_key=True,
+                                  serialize=False,
+                                  verbose_name='ID')),
+                ('name',
+                 models.CharField(max_length=200,
+                                  verbose_name='Название произведения')),
+                ('year',
+                 models.PositiveIntegerField(
+                     verbose_name='Год создания произведения')),
+                ('description',
+                 models.TextField(blank=True,
+                                  null=True,
+                                  verbose_name='Описание произведения')),
                 ('category',
-                 models.ForeignKey(null=True,
-                                   on_delete=django.db.models.deletion.SET_NULL,
-                                   related_name='titles',
-                                   to='titles.Category')),
+                 models.ForeignKey(
+                     null=True,
+                     on_delete=django.db.models.deletion.SET_NULL,
+                     related_name='titles',
+                     to='titles.Category')),
                 ('genre', models.ManyToManyField(to='titles.Genre')),
             ],
             options={
-                'ordering': ('id',),
+                'ordering': ('id', ),
             },
         ),
     ]
