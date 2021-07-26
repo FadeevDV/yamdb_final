@@ -1,13 +1,13 @@
 #
-![example workflow](https://github.com/FadeevDV/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+![YaMDB workflow](https://github.com/FadeevDV/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 
 # YaMDB_final
 ### Описание
 Проект YaMDb собирает отзывы пользователей на произведения. Произведения делятся на категории: «Книги», «Фильмы», «Музыка».
 Приложение написано на основе `fullREST` архитектуры на фреймворке `django-rest-framework`. База данных `postgresssql`.
-<br><br>Проект доступен по адресу: http://178.154.222.216 <br>
-Документация: http://178.154.222.216/redoc/
+<br><br>Проект доступен по адресу: http://130.193.50.182 <br>
+Документация: http://130.193.50.182/redoc/
 
 Произведения делятся на категории: «Книги», «Фильмы», «Музыка».
 
