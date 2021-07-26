@@ -6,9 +6,7 @@ from users.models import User
 
 
 class Review(models.Model):
-    text = models.TextField(
-        verbose_name='Текст отзыва',
-    )
+    text = models.TextField(verbose_name='Текст отзыва', )
     pub_date = models.DateTimeField(
         auto_now_add=True,
         verbose_name='Дата публикации отзыва',
@@ -34,9 +32,7 @@ class Review(models.Model):
     )
 
     class Meta:
-        ordering = (
-            '-pub_date',
-        )
+        ordering = ('-pub_date', )
 
 
 class Comment(models.Model):
@@ -52,15 +48,11 @@ class Comment(models.Model):
         related_name='comments',
         verbose_name='Пользователь',
     )
-    text = models.TextField(
-        verbose_name='Текст комментария',
-    )
+    text = models.TextField(verbose_name='Текст комментария', )
     pub_date = models.DateTimeField(
         auto_now_add=True,
         verbose_name='Дата комментария',
     )
 
     class Meta:
-        ordering = (
-            '-pub_date',
-        )
+        ordering = ('-pub_date', )
