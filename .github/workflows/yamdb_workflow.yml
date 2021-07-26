@@ -22,7 +22,8 @@ jobs:
     - name: Test with flake8 and django tests
       run: |
         python -m flake8
-        cd yamdb_final/
+        #перейти в папку, содержащую manage.py - <корневая_папка>/<папка_проекта>/manage.py
+        cd Dev/yamdb_final/
         python manage.py test
 
     - name: Test with pytest
