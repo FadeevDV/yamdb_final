@@ -23,7 +23,7 @@ jobs:
       run: |
         python -m flake8
         #перейти в папку, содержащую manage.py - <корневая_папка>/<папка_проекта>/manage.py
-        cd FadeevDV/yamdb_final/
+        #cd yamdb_final/
         python manage.py test
 
     - name: Test with pytest
