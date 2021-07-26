@@ -1,22 +1,22 @@
-from uuid import uuid1
-
 from api_yamdb import settings
-
 from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404
 
-from rest_framework import status, viewsets
+from users.models import User
+from users.permissions import IsAdmin
+from users.serializers import (UserSerializer,
+                               UserEmailSerializer,
+                               UserLoginSerializer)
+
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework import status, viewsets
 
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from users.models import User
-from users.permissions import IsAdmin
-from users.serializers import (UserEmailSerializer, UserLoginSerializer,
-                               UserSerializer)
+from uuid import uuid1
 
 
 class UserViewSet(viewsets.ModelViewSet):

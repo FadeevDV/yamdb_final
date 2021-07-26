@@ -1,15 +1,13 @@
-from django.db.models import Avg
 from django.shortcuts import get_object_or_404
+from django.db.models import Avg
 
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from reviews.models import Review
-from reviews.serializers import CommentSerializer, ReviewSerializer
-
 from titles.models import Title
-
 from users.permissions import IsAdminOrStaff
+from reviews.serializers import CommentSerializer, ReviewSerializer
 
 
 class ReviewViewSet(viewsets.ModelViewSet):
