@@ -24,7 +24,7 @@ jobs:
         python -m flake8
         #перейти в папку, содержащую manage.py - <корневая_папка>/<папка_проекта>/manage.py
         #cd yamdb_final/
-        python manage.py test
+        #python manage.py test
 
     - name: Test with pytest
       run: pytest
