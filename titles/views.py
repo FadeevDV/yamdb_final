@@ -1,16 +1,17 @@
-from django.shortcuts import get_object_or_404
-
 from django_filters.rest_framework import DjangoFilterBackend
-
+from django.shortcuts import get_object_or_404
 from rest_framework import filters, mixins, status, viewsets
 from rest_framework.response import Response
-
 from titles.filters import TitleFilter
-from titles.models import Category, Genre, Title
-from titles.serializers import (CategorySerializer, GenreSerializer,
-                                TitleSerializer_NOTSAFE, TitleSerializer_SAFE)
-
 from users.permissions import IsAdminOrReadOnly
+
+from titles.models import Category, Genre, Title
+from titles.serializers import (
+    CategorySerializer,
+    GenreSerializer,
+    TitleSerializer_SAFE,
+    TitleSerializer_NOTSAFE
+)
 
 
 class CategoryViewSet(
@@ -18,7 +19,7 @@ class CategoryViewSet(
         mixins.CreateModelMixin,
         mixins.DestroyModelMixin,
         viewsets.GenericViewSet):
-    """Операции с категориями произведений"""
+    '''Операции с категориями произведений'''
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     filter_backends = [filters.SearchFilter]

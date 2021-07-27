@@ -1,8 +1,8 @@
 from django.urls import include, path
-
 from rest_framework.routers import DefaultRouter
 
 from reviews.views import CommentViewSet, ReviewViewSet
+
 
 # создаем роутер
 v1_router = DefaultRouter()
